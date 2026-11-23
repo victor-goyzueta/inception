@@ -22,14 +22,14 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/jocalder/data/mariadb
+      device: $HOME/data/mariadb
 
   wordpress-files:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/jocalder/data/wordpress
+      device: $HOME/data/wordpress
 
 services:
 
@@ -46,7 +46,7 @@ services:
     networks:
       - inception-network
     volumes:
-      - wordpress-files:/var/www/html:ro
+      - $HOME/data/wordpress-files:/var/www/html:ro
     depends_on:
       - wordpress
 
@@ -61,7 +61,7 @@ services:
     networks:
       - inception-network
     volumes:
-      - wordpress-files:/var/www/html
+      - $HOME/data/wordpress-files:/var/www/html
     env_file:
       - .env
     secrets:
@@ -81,7 +81,7 @@ services:
     networks:
       - inception-network
     volumes:
-      - mariadb-data:/var/lib/mysql
+      - $HOME/data/mariadb-data:/var/lib/mysql
     env_file:
       - .env
     secrets:

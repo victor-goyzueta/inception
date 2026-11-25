@@ -12,7 +12,7 @@ DATA_DIR	=	$(HOME)/data
 
 all: build up
 	@echo "$(GREEN) Infrastructure ready!!$(NC)"
-	@echo "$(GREEN) https://jocalder.42.fr$(NC)"
+	@echo "$(GREEN) https://vgoyzuet.42.fr$(NC)"
 
 $(DATA_DIR)/mariadb:
 	mkdir -p $(DATA_DIR)/mariadb

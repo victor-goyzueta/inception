@@ -37,18 +37,18 @@ The domain must resolve to the machine running the stack. For a local setup,
 `/etc/hosts` should contain:
 
 ```
-127.0.0.1 jocalder.42.fr
+127.0.0.1 vgoyzuet.42.fr
 ```
 
-- **Website:** https://jocalder.42.fr (HTTPS only; a self-signed certificate
+- **Website:** https://vgoyzuet.42.fr (HTTPS only; a self-signed certificate
   warning is expected — accept it to continue)
-- **Login page:** https://jocalder.42.fr/wp-login.php
+- **Login page:** https://vgoyzuet.42.fr/wp-login.php
 - **Admin dashboard:** log in with the administrator account defined in
   `secrets/wp_admin_password.txt` (username is set in `srcs/.env`, e.g.
   `WP_ADMIN_USER`). **Do not use a username containing "admin"** — it is
   rejected by the project rules.
 
-> HTTP (port 80) is intentionally disabled: `http://jocalder.42.fr` will not
+> HTTP (port 80) is intentionally disabled: `http://vgoyzuet.42.fr` will not
 > connect. All traffic is encrypted with TLS.
 
 ## 4. Locating and managing credentials
@@ -108,8 +108,8 @@ docker logs mariadb
 Quick functional checks:
 
 ```bash
-curl -k https://jocalder.42.fr       # website responds over HTTPS
-curl http://jocalder.42.fr           # must FAIL (HTTP is not served)
+curl -k https://vgoyzuet.42.fr       # website responds over HTTPS
+curl http://vgoyzuet.42.fr           # must FAIL (HTTP is not served)
 docker volume ls                     # two volumes (database + wordpress)
 docker network ls                    # the project's internal network is listed
 ```

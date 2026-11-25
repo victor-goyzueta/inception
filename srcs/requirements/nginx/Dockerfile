@@ -16,7 +16,7 @@ RUN	openssl req -x509 -nodes -days 365 \
 	-newkey rsa:2048 \
 	-keyout /etc/nginx/ssl/inception.key \
 	-out /etc/nginx/ssl/inception.crt \
-	-subj "/C=ES/ST=Madrid/L=Madrid/O=42/OU=42/CN=jocalder.42.fr"
+	-subj "/C=ES/ST=Madrid/L=Madrid/O=42/OU=42/CN=vgoyzuet.42.fr"
 
 COPY	tools/nginx.conf /etc/nginx/conf.d/default.conf
 

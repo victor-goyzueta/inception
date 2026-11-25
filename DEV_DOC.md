@@ -13,7 +13,7 @@ from a clean machine.
 - Your user added to the `docker` group (`sudo usermod -aG docker $USER`, then
   re-login).
 - Ports `443` free on the host.
-- Domain resolution for `jocalder.42.fr` → add `127.0.0.1 jocalder.42.fr` to
+- Domain resolution for `vgoyzuet.42.fr` → add `127.0.0.1 vgoyzuet.42.fr` to
   `/etc/hosts` for local runs.
 
 ## 2. Project layout
@@ -39,7 +39,7 @@ from a clean machine.
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/jocalder/Inception.git
+   git clone https://github.com/vgoyzuet/Inception.git
    cd Inception
    ```
 
@@ -54,12 +54,12 @@ from a clean machine.
 
 3. **Fill `srcs/.env`** with the non-sensitive values, e.g.:
    ```text
-   DOMAIN_NAME=jocalder.42.fr
+   DOMAIN_NAME=vgoyzuet.42.fr
    MYSQL_DATABASE=wordpress
    MYSQL_USER=wordpress
-   WP_ADMIN_USER=jocalder         # must NOT contain "admin"
+   WP_ADMIN_USER=vgoyzuet         # must NOT contain "admin"
    WP_USER=editor
-   WP_USER_EMAIL=editor@jocalder.42.fr
+   WP_USER_EMAIL=editor@vgoyzuet.42.fr
    ```
 
 ## 4. Build and launch

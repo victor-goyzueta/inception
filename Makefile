@@ -12,7 +12,7 @@ DATA_DIR	=	$(HOME)/data
 
 all: build up
 	@echo "$(GREEN) Infrastructure ready!!$(NC)"
-	@echo "$(GREEN) https://vgoyzuet.42.fr$(NC)"
+	@echo "$(GREEN) https://jocalder.42.fr$(NC)"
 
 $(DATA_DIR)/mariadb:
 	mkdir -p $(DATA_DIR)/mariadb
@@ -24,30 +24,30 @@ $(DATA_DIR)/wordpress:
 
 build: $(DATA_DIR)/mariadb $(DATA_DIR)/wordpress
 	@echo "$(YELLOW) Building Docker images...$(NC)"
-	docker-compose -f $(COMPOSE_FILE) build
+	docker compose -f $(COMPOSE_FILE) build
 
 up:
 	@echo "$(YELLOW) Starting services..$(NC)"
-	docker-compose -f $(COMPOSE_FILE) up -d
+	docker compose -f $(COMPOSE_FILE) up -d
 
 down:
 	@echo "$(RED) Stopping services..$(NC)"
-	docker-compose -f $(COMPOSE_FILE) down
+	docker compose -f $(COMPOSE_FILE) down
 
 logs:
-	docker-compose -f $(COMPOSE_FILE) logs -f
+	docker compose -f $(COMPOSE_FILE) logs -f
 
 status:
 	@echo "$(YELLOW) Containers status..$(NC)"
-	docker-compose -f $(COMPOSE_FILE) ps
+	docker compose -f $(COMPOSE_FILE) ps
 
 clean: down
 	@echo "$(RED) Cleaning containers..$(NC)"
-	docker-compose -f $(COMPOSE_FILE) down --rmi all
+	docker compose -f $(COMPOSE_FILE) down --rmi all
 
 fclean: clean
 	@echo "$(RED) Full cleanup..$(NC)"
-	docker-compose -f $(COMPOSE_FILE) down -v --rmi all
+	docker compose -f $(COMPOSE_FILE) down -v --rmi all
 	sudo rm -rf $(DATA_DIR)
 	docker system prune -af
 	@echo "$(RED) Data removed..$(NC)"

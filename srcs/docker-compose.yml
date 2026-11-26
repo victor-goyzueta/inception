@@ -46,7 +46,7 @@ services:
     networks:
       - inception-network
     volumes:
-      - /home/vgoyzuet/data/wordpress-files:/var/www/html:ro
+      - wordpress-files:/var/www/html:ro
     depends_on:
       - wordpress
 
@@ -61,7 +61,7 @@ services:
     networks:
       - inception-network
     volumes:
-      - /home/vgoyzuet/data/wordpress-files:/var/www/html
+      - wordpress-files:/var/www/html
     env_file:
       - .env
     secrets:
@@ -81,7 +81,7 @@ services:
     networks:
       - inception-network
     volumes:
-      - /home/vgoyzuet/data/mariadb-data:/var/lib/mysql
+      - mariadb-data:/var/lib/mysql
     env_file:
       - .env
     secrets:
